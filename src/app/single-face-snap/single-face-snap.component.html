@@ -1,16 +1,12 @@
-<div class="face-snap-card" [ngClass]="{ snapped: usersnap }">
-    <h2>{{ faceSnap.title | titlecase }}</h2>
-    <a routerLink="/facesnaps">BACK</a>
-    @if (faceSnap.location) {
-        <p>Localisation: {{ faceSnap.location }}</p>
-    } @else {
-        <p>Localisation non spécifié</p>
-    }
-    <img [src]="faceSnap.urlimage" [alt]="faceSnap.title">
-    <p>{{ faceSnap.description }}</p>
-    <p>FaceSnapp créé le {{ faceSnap.createdAt | date: 'd MMMM yyyy, à HH:mm' }}</p>
-    <p>
-        <button (click)="onAddSnap()">{{snapbuttontext}}</button>
-        <span [ngStyle]="{ color: 'rgb(0, ' + faceSnap.snaps + ', 0)'}">👍{{ faceSnap.snaps }}</span>
-    </p>
+<div class="face-snap-card" *ngIf="faceSnap$ | async as faceSnap" [ngClass]="{ snapped: buttonText === 'unSnap' }">
+  <h2>{{ faceSnap.title | uppercase }}</h2>
+  <a routerLink="/facesnaps">Back</a>
+  <p>Mis en ligne {{ faceSnap.createdDate | date: 'à HH:mm, le d MMMM yyyy' }}</p>
+  <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title">
+  <p>{{ faceSnap.description }}</p>
+  <p *ngIf="faceSnap.location">Photo prise à {{ faceSnap.location }}</p>
+  <p>
+    <button (click)="onSnap(faceSnap.id)">{{ buttonText }}</button>
+    <span [ngStyle]="{ color: 'rgb(0,' + faceSnap.snaps + ', 0)'}">👍 {{ faceSnap.snaps }}</span>
+  </p>
 </div>
