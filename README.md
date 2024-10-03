@@ -2,11 +2,15 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.6.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Démarer le projet
 
-## Backend
+Cloner ce repo 
+
+lancer le avec le cli
+
+`ng serve`
+
 
 Cloner le backend 
 
@@ -15,3 +19,9 @@ https://github.com/OpenClassrooms-Student-Center/angular-intermediate-backend
 `npm i`
 
 `npm run start`
+
+
+
+Rendez vous a l'url :
+
+`http://localhost:4200/`
