@@ -1,11 +1,18 @@
 <div class="landing-block">
   <form #newsletterForm="ngForm" (ngSubmit)="onSubmitForm(newsletterForm)">
-    <label for="emailInput">Inscrivez-vous pour recevoir notre newsletter !</label>
-    <input id="emailInput" name="userEmail" type="email" [(ngModel)]="userEmail">
-    <button type="submit">OK!</button>
+    
+    <mat-form-field class="newsletter">
+      <mat-label for="emailInput">Inscrivez-vous pour recevoir notre newsletter !</mat-label>
+      <input matInput id="emailInput" name="userEmail" type="email" [(ngModel)]="userEmail">
+    </mat-form-field>
+    <button mat-flat-button extended class="newsletter" type="submit">  
+      Recevoir !
+    </button>
   </form>
   <img src="https://user.oc-static.com/upload/2021/11/11/16366495596929_snapface.png" alt="Snapface logo">
   <div class="landing-links">
-    <button (click)="onContinue()">Continuer vers Snapface</button>
+    <button mat-flat-button extended (click)="onContinue()">  
+      Continuer vers Snapface
+    </button>
   </div>
 </div>

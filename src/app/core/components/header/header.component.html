@@ -1,8 +1,21 @@
 <header>
   <h1>snapface</h1>
   <nav>
-    <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
-    <a routerLink="facesnaps" routerLinkActive="active">FaceSnaps</a>
+    <mat-button-toggle-group
+      name="ingredients"
+      aria-label="Ingredients"
+      [hideMultipleSelectionIndicator]="false"
+    >
+      <mat-button-toggle value="flour"><a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></mat-button-toggle>
+      <mat-button-toggle value="sugar"><a routerLink="facesnaps" routerLinkActive="active">FaceSnaps</a></mat-button-toggle>
+    </mat-button-toggle-group>
   </nav>
-  <button (click)="onAddNewFaceSnap()">+</button>
+
+
+
+
+
+  <button mat-fab (click)="onAddNewFaceSnap()" aria-label="Example icon button with a delete icon">
+    <mat-icon>add</mat-icon>
+  </button>
 </header>

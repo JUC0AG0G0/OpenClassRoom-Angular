@@ -27,8 +27,8 @@
   justify-content: space-between;
 }
 
-input, textarea {
-  width: 50%;
+mat-form-field, input, textarea {
+  width: 100%;
 }
 
 .action-buttons {

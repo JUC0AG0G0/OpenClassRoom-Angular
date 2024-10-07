@@ -1,5 +1,11 @@
-<div class="face-snap-card" [ngClass]="{ snapped: buttonText === 'Oops, unSnap!' }">
-  <h2>{{ faceSnap.title | uppercase }}</h2>
-  <p>{{ faceSnap.description }}</p>
-  <button (click)="onViewFaceSnap()">VIEW</button>
+<div class="face-snap-card">
+  <mat-card appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>{{ faceSnap.title | uppercase }}</mat-card-title>
+      <mat-card-subtitle>{{ faceSnap.description }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions align="end">
+      <button mat-button (click)="onViewFaceSnap()">VIEW</button>
+    </mat-card-actions>
+  </mat-card>
 </div>

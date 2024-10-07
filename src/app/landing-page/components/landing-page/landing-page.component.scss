@@ -6,10 +6,28 @@
 }
 
 .landing-links {
+  position: relative;
+  top: 2rem;
   width: 100%;
   text-align: center;
 }
 
 button {
   font-size: 20px;
+}
+
+mat-form-field {
+  width: 60%;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem; 
+}
+
+.newsletter {
+  margin-right: 20px;
+  margin-left: 20px;
 }

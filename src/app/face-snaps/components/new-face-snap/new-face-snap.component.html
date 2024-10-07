@@ -2,23 +2,31 @@
   <h2>NOUVEAU FACESNAP</h2>
   <form [formGroup]="snapForm">
     <div class="form-group">
-      <label for="title">Titre</label>
-      <input id="title" type="text" formControlName="title">
+      <mat-form-field>
+        <mat-label for="title">Titre</mat-label>
+        <input matInput id="title" type="text" formControlName="title">
+      </mat-form-field>
     </div>
     <div class="form-group">
-      <label for="description">Description</label>
-      <textarea id="description" type="text" formControlName="description" rows="4"></textarea>
+      <mat-form-field>
+        <mat-label for="description">Description</mat-label>
+        <textarea matInput id="description" type="text" formControlName="description" rows="4"></textarea>
+      </mat-form-field>
     </div>
     <div class="form-group">
-      <label for="title">URL de l'image</label>
-      <input id="imageUrl" type="text" formControlName="imageUrl">
+      <mat-form-field>
+        <mat-label for="title">URL de l'image</mat-label>
+        <input matInput id="imageUrl" type="text" formControlName="imageUrl">
+      </mat-form-field>
     </div>
     <div class="form-group">
-      <label for="location">Lieu</label>
-      <input id="location" type="text" formControlName="location">
+      <mat-form-field>
+        <mat-label for="location">Lieu</mat-label>
+        <input matInput id="location" type="text" formControlName="location">
+      </mat-form-field>
     </div>
     <div class="action-buttons">
-      <button type="submit" (click)="onSubmitForm()" [disabled]="snapForm.invalid">Enregistrer</button>
+      <button mat-flat-button type="submit" (click)="onSubmitForm()" [disabled]="snapForm.invalid">Enregistrer</button>
     </div>
   </form>
 </div>

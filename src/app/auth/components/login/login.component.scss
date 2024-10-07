@@ -14,15 +14,15 @@
     justify-content: space-between;
 }
 
-input, textarea {
-    width: 50%;
+mat-form-field, input, textarea {
+    width: 100%;
 }
 
 .action-buttons {
     width: 100%;
 }
 
-button {
+.send {
     display: block;
     margin: 20px auto;
 }
