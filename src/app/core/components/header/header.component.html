@@ -8,14 +8,11 @@
     >
       <mat-button-toggle value="flour"><a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></mat-button-toggle>
       <mat-button-toggle value="sugar"><a routerLink="facesnaps" routerLinkActive="active">FaceSnaps</a></mat-button-toggle>
+      <mat-button-toggle value="table"><a routerLink="facesnaps/table" routerLinkActive="active">FaceSnaps Table</a></mat-button-toggle>
     </mat-button-toggle-group>
   </nav>
 
-
-
-
-
-  <button mat-fab (click)="onAddNewFaceSnap()" aria-label="Example icon button with a delete icon">
+  <button mat-fab (click)="onAddNewFaceSnap()" aria-label="Bouton pour ajouter des faceSnaps" class="faceSnapButton">
     <mat-icon>add</mat-icon>
   </button>
 </header>

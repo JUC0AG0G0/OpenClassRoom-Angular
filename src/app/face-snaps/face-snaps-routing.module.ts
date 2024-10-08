@@ -4,8 +4,10 @@ import { SingleFaceSnapComponent } from './components/single-face-snap/single-fa
 import { FaceSnapListComponent } from './components/face-snap-list/face-snap-list.component';
 import { NewFaceSnapComponent } from './components/new-face-snap/new-face-snap.component';
 import { AuthGuard } from '../core/guards/auth.guard';
+import { FaceSnapTableComponent } from './components/face-snap-table/face-snap-table.component';
 
 const routes: Routes = [
+  { path: 'table', component: FaceSnapTableComponent, canActivate: [AuthGuard] },
   { path: 'create', component: NewFaceSnapComponent, canActivate: [AuthGuard] },
   { path: ':id', component: SingleFaceSnapComponent, canActivate: [AuthGuard] },
   { path: '', component: FaceSnapListComponent, canActivate: [AuthGuard] },
