@@ -7,6 +7,7 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { CdkDrag, CdkDragDrop, CdkDropList, moveItemInArray } from '@angular/cdk/drag-drop';
 
 
 export interface UserData {
@@ -83,11 +84,19 @@ const URLIMAGES: string[] = [
     MatPaginatorModule,
     MatSortModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    CdkDropList, 
+    CdkDrag, 
   ],
 })
 export class FaceSnapTableComponent implements AfterViewInit {
-  columnsToDisplay = ['id', 'name', 'progress', 'fruit'];
+
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.columnsToDisplay, event.previousIndex, event.currentIndex);
+    moveItemInArray(this.columnsToDisplayWithExpand, event.previousIndex, event.currentIndex);
+  }
+
+  columnsToDisplay: string[] = ['id', 'name', 'progress', 'fruit'];
   dataSource = new MatTableDataSource<UserData>();
   columnsToDisplayWithExpand = [...this.columnsToDisplay, 'expand'];
   expandedElement: UserData | null | undefined;
@@ -120,6 +129,9 @@ export class FaceSnapTableComponent implements AfterViewInit {
       this.dataSource.paginator.firstPage();
     }
   }
+
+
+  
 }
 
 /** Builds and returns a new User. */
